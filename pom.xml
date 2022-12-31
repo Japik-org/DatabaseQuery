@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.japik.utils</groupId>
-    <artifactId>DatabaseQuery</artifactId>
+    <artifactId>database-query</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -16,8 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.japik</groupId>
-            <artifactId>Japik</artifactId>
-            <version>[0.6.0, 0.7.0)</version>
+            <artifactId>japik</artifactId>
         </dependency>
     </dependencies>
 </project>
