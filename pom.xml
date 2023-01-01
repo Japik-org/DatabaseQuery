@@ -5,8 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.japik.utils</groupId>
-    <artifactId>DatabaseQuery</artifactId>
+    <artifactId>database-query</artifactId>
     <version>1.0</version>
+
+    <name>Database Query</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -16,8 +18,55 @@
     <dependencies>
         <dependency>
             <groupId>com.japik</groupId>
-            <artifactId>Japik</artifactId>
-            <version>[0.6.0, 0.7.0)</version>
+            <artifactId>japik</artifactId>
+            <version>[0.6.0, 0.8.0)</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>database-query-${project.version}</finalName>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.10.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.2-beta-5</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>src</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
